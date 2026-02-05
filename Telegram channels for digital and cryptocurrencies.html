@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قنوات التليجرام التعليمية - العملات الرقمية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5fb4;
+            --secondary-color: #26a269;
+            --dark-color: #1c1c1c;
+            --light-color: #f5f5f5;
+            --gray-color: #e0e0e0;
+            --danger-color: #c01c28;
+            --warning-color: #f5c211;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #0d4a9e);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+
+        .visitor-count {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 15px 10px;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            background-color: rgba(26, 95, 180, 0.05);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 992px) {
+            .main-content {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gray-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .intro-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .crypto-terms {
+            background-color: rgba(38, 162, 105, 0.1);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            border-right: 4px solid var(--secondary-color);
+        }
+
+        /* Search Section */
+        .search-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid var(--gray-color);
+            border-radius: var(--border-radius);
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .search-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 0 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background-color: #0d4a9e;
+        }
+
+        /* Channels Section */
+        .channels-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .channel-card {
+            border: 1px solid var(--gray-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .channel-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .channel-name {
+            font-weight: 700;
+            color: var(--dark-color);
+            font-size: 1.2rem;
+        }
+
+        .channel-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .channel-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+            width: 100%;
+        }
+
+        .channel-link:hover {
+            background-color: #0d4a9e;
+        }
+
+        .channel-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Reports Section */
+        .reports-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .report-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .report-btn {
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            flex: 1;
+        }
+
+        .report-btn:hover {
+            background-color: #1e8b5a;
+        }
+
+        .report-btn.secondary {
+            background-color: var(--gray-color);
+            color: var(--dark-color);
+        }
+
+        .report-btn.secondary:hover {
+            background-color: #d0d0d0;
+        }
+
+        .report-data {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid var(--gray-color);
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+            }
+            
+            .search-container {
+                flex-direction: column;
+            }
+            
+            .report-actions {
+                flex-direction: column;
+            }
+            
+            .channels-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .highlight {
+            background-color: rgba(245, 194, 17, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <h1>تعلم العملات الرقمية</h1>
+            </div>
+            <div class="visitor-count">
+                <i class="fas fa-users"></i>
+                <span id="totalVisitors">0</span> زائر
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#intro" class="active">مقدمة عن الكريبتو</a></li>
+                <li><a href="#channels">قنوات التليجرام</a></li>
+                <li><a href="#search">بحث سريع</a></li>
+                <li><a href="#reports">التقارير والإحصاءات</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <div class="left-column">
+            <!-- Introduction Section -->
+            <section id="intro" class="intro-section">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    مقدمة عن العملات الرقمية (الكريبتو)
+                </h2>
+                <div class="intro-content">
+                    <p>العملات الرقمية أو العملات المشفرة (Cryptocurrencies) هي أموال رقمية تستخدم تقنية البلوكشين (Blockchain) لضمان أمان المعاملات والتحكم في إنشاء وحدات جديدة. تم تصميمها لتعمل كوسيط للتبادل، باستخدام التشفير لتأمين المعاملات والتحكم في إنشاء وحدات إضافية.</p>
+                    
+                    <p>أول وأشهر عملة رقمية هي البيتكوين (Bitcoin) التي تم إنشاؤها في عام 2009. منذ ذلك الحين، ظهرت الآلاف من العملات الرقمية الأخرى مثل الإيثيريوم (Ethereum)، الريبل (Ripple)، واللايتكوين (Litecoin).</p>
+                    
+                    <div class="crypto-terms">
+                        <h3>مصطلحات أساسية في عالم الكريبتو:</h3>
+                        <ul style="margin-right: 20px; margin-top: 10px;">
+                            <li><strong>البلوكشين (Blockchain):</strong> سجل رقمي لا مركزي يسجل جميع المعاملات.</li>
+                            <li><strong>التعدين (Mining):</strong> عملية استخدام أجهزة الكمبيوتر لحل مسائل رياضية معقدة للتحقق من المعاملات.</li>
+                            <li><strong>المحفظة الرقمية (Wallet):</strong> برنامج أو جهاز يسمح بتخزين العملات الرقمية وإرسالها واستقبالها.</li>
+                            <li><strong>التخزين البارد (Cold Storage):</strong> طريقة لتخزين العملات الرقمية دون اتصال بالإنترنت لزيادة الأمان.</li>
+                        </ul>
+                    </div>
+                    
+                    <p>يقدم هذا الموقع مجموعة من أفضل قنوات التليجرام التعليمية التي تساعدك على فهم عالم العملات الرقمية، متابعة أخبار السوق، وتعلم استراتيجيات التداول.</p>
+                </div>
+            </section>
+
+            <!-- Channels Section -->
+            <section id="channels" class="channels-section">
+                <h2 class="section-title">
+                    <i class="fab fa-telegram"></i>
+                    قنوات التليجرام التعليمية
+                </h2>
+                <p>انقر على أي قناة للانتقال مباشرة إليها في تطبيق تليجرام</p>
+                
+                <div class="channels-grid" id="channelsContainer">
+                    <!-- Channels will be loaded here by JavaScript -->
+                </div>
+                
+                <div id="noResults" class="no-results hidden">
+                    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 15px; color: #ccc;"></i>
+                    <p>لم يتم العثور على قنوات تطابق بحثك. حاول بكلمات أخرى.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="right-column">
+            <!-- Search Section -->
+            <section id="search" class="search-section">
+                <h2 class="section-title">
+                    <i class="fas fa-search"></i>
+                    بحث سريع عن القنوات
+                </h2>
+                <p>ابحث عن القنوات حسب الاسم أو الوصف أو المجال</p>
+                
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="اكتب كلمة للبحث...">
+                    <button id="searchButton" class="search-btn">
+                        <i class="fas fa-search"></i> بحث
+                    </button>
+                </div>
+                
+                <div id="searchResults" class="search-results">
+                    <!-- Search results will appear here -->
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports" class="reports-section">
+                <h2 class="section-title">
+                    <i class="fas fa-chart-bar"></i>
+                    التقارير والإحصاءات
+                </h2>
+                <p>إحصائيات الزيارات والنقرات على القنوات</p>
+                
+                <div class="report-actions">
+                    <button id="visitorsReportBtn" class="report-btn">
+                        <i class="fas fa-users"></i> تقرير الزوار
+                    </button>
+                    <button id="clicksReportBtn" class="report-btn secondary">
+                        <i class="fas fa-mouse-pointer"></i> تقرير النقرات
+                    </button>
+                </div>
+                
+                <div class="report-data">
+                    <table id="reportTable">
+                        <thead>
+                            <tr>
+                                <th>القناة</th>
+                                <th id="reportHeader">عدد الزيارات</th>
+                                <th>النسبة</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportBody">
+                            <!-- Report data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="margin-top: 20px; display: flex; gap: 10px;">
+                    <button id="printReportBtn" class="report-btn secondary">
+                        <i class="fas fa-print"></i> طباعة التقرير
+                    </button>
+                    <button id="exportReportBtn" class="report-btn">
+                        <i class="fas fa-download"></i> تصدير البيانات
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <h2>تعلم العملات الرقمية</h2>
+            </div>
+            
+            <p>المركز العربي الشامل لتعلم العملات الرقمية والتداول</p>
+            
+            <div class="footer-links">
+                <a href="#intro">عن الكريبتو</a>
+                <a href="#channels">القنوات</a>
+                <a href="#search">البحث</a>
+                <a href="#reports">التقارير</a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 موقع تعلم العملات الرقمية. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data for telegram channels
+        const channelsData = [
+            {
+                id: 1,
+                name: "تعلم التداول بالعملات الرقمية",
+                description: "قناة متخصصة في تعليم أساسيات التداول بالعملات الرقمية للمبتدئين والمحترفين",
+                category: "تعليمي",
+                link: "https://t.me/crypto_learn",
+                icon: "fas fa-graduation-cap",
+                visits: 120,
+                clicks: 85
+            },
+            {
+                id: 2,
+                name: "أخبار البيتكوين والعملات الرقمية",
+                description: "أحدث الأخبار والتحليلات حول البيتكوين والعملات الرقمية",
+                category: "أخبار",
+                link: "https://t.me/bitcoin_news",
+                icon: "fas fa-newspaper",
+                visits: 210,
+                clicks: 145
+            },
+            {
+                id: 3,
+                name: "تحليل فني للعملات الرقمية",
+                description: "تحليلات فنية يومية وأسبوعية للعملات الرقمية الرئيسية",
+                category: "تحليل",
+                link: "https://t.me/crypto_analysis",
+                icon: "fas fa-chart-line",
+                visits: 180,
+                clicks: 112
+            },
+            {
+                id: 4,
+                name: "إشارات تداول العملات الرقمية",
+                description: "إشارات تداول مجانية ومدفوعة للعملات الرقمية مع شرح كامل",
+                category: "إشارات",
+                link: "https://t.me/crypto_signals",
+                icon: "fas fa-bullhorn",
+                visits: 320,
+                clicks: 240
+            },
+            {
+                id: 5,
+                name: "أمن العملات الرقمية والمحافظ",
+                description: "نصائح حول تأمين العملات الرقمية واختيار أفضل المحافظ الرقمية",
+                category: "أمن",
+                link: "https://t.me/crypto_security",
+                icon: "fas fa-shield-alt",
+                visits: 95,
+                clicks: 67
+            },
+            {
+                id: 6,
+                name: "تعلم تقنية البلوكشين",
+                description: "شرح مفصل لتقنية البلوكشين وتطبيقاتها العملية",
+                category: "تقني",
+                link: "https://t.me/blockchain_learn",
+                icon: "fas fa-link",
+                visits: 145,
+                clicks: 98
+            },
+            {
+                id: 7,
+                name: "توقعات العملات الرقمية",
+                description: "توقعات أسعار العملات الرقمية وتحليلات طويلة المدى",
+                category: "توقعات",
+                link: "https://t.me/crypto_predictions",
+                icon: "fas fa-crystal-ball",
+                visits: 175,
+                clicks: 120
+            },
+            {
+                id: 8,
+                name: "العملات الرقمية للمبتدئين",
+                description: "دليل شامل للمبتدئين للدخول إلى عالم العملات الرقمية",
+                category: "مبتدئين",
+                link: "https://t.me/crypto_beginners",
+                icon: "fas fa-user-graduate",
+                visits: 260,
+                clicks: 195
+            }
+        ];
+
+        // Initialize variables
+        let currentReportType = 'visitors';
+        let totalVisits = 0;
+        
+        // DOM Elements
+        const channelsContainer = document.getElementById('channelsContainer');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const noResults = document.getElementById('noResults');
+        const visitorsReportBtn = document.getElementById('visitorsReportBtn');
+        const clicksReportBtn = document.getElementById('clicksReportBtn');
+        const reportBody = document.getElementById('reportBody');
+        const reportHeader = document.getElementById('reportHeader');
+        const totalVisitorsElement = document.getElementById('totalVisitors');
+        const printReportBtn = document.getElementById('printReportBtn');
+        const exportReportBtn = document.getElementById('exportReportBtn');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load channels
+            renderChannels(channelsData);
+            
+            // Calculate total visits
+            totalVisits = channelsData.reduce((sum, channel) => sum + channel.visits, 0);
+            totalVisitorsElement.textContent = totalVisits.toLocaleString();
+            
+            // Load initial report
+            generateVisitorsReport();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Update visitor count (simulate new visitors)
+            simulateVisitorGrowth();
+        });
+
+        // Render channels to the page
+        function renderChannels(channels) {
+            channelsContainer.innerHTML = '';
+            
+            if (channels.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            noResults.classList.add('hidden');
+            
+            channels.forEach(channel => {
+                const channelCard = document.createElement('div');
+                channelCard.className = 'channel-card';
+                channelCard.innerHTML = `
+                    <div class="channel-header">
+                        <div class="channel-icon">
+                            <i class="${channel.icon}"></i>
+                        </div>
+                        <div>
+                            <div class="channel-name">${channel.name}</div>
+                            <div style="color: #888; font-size: 0.9rem;">${channel.category}</div>
+                        </div>
+                    </div>
+                    <div class="channel-description">${channel.description}</div>
+                    <a href="${channel.link}" target="_blank" class="channel-link" data-channel-id="${channel.id}">
+                        <i class="fab fa-telegram"></i> الانتقال إلى القناة
+                    </a>
+                    <div class="channel-stats">
+                        <div><i class="fas fa-eye"></i> ${channel.visits} زيارة</div>
+                        <div><i class="fas fa-mouse-pointer"></i> ${channel.clicks} نقرة</div>
+                    </div>
+                `;
+                
+                channelsContainer.appendChild(channelCard);
+            });
+            
+            // Add click tracking to channel links
+            document.querySelectorAll('.channel-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const channelId = parseInt(this.getAttribute('data-channel-id'));
+                    trackChannelClick(channelId);
+                });
+            });
+        }
+
+        // Search functionality
+        function searchChannels(query) {
+            if (!query.trim()) {
+                renderChannels(channelsData);
+                return;
+            }
+            
+            const searchTerms = query.toLowerCase().trim().split(' ');
+            
+            const filteredChannels = channelsData.filter(channel => {
+                const searchText = (channel.name + ' ' + channel.description + ' ' + channel.category).toLowerCase();
+                
+                return searchTerms.some(term => searchText.includes(term));
+            });
+            
+            renderChannels(filteredChannels);
+            
+            // Highlight search terms in channel names and descriptions
+            if (filteredChannels.length > 0) {
+                highlightSearchTerms(searchTerms);
+            }
+        }
+
+        // Highlight search terms in results
+        function highlightSearchTerms(terms) {
+            const channelCards = document.querySelectorAll('.channel-card');
+            
+            channelCards.forEach(card => {
+                const nameElement = card.querySelector('.channel-name');
+                const descElement = card.querySelector('.channel-description');
+                
+                let nameText = nameElement.textContent;
+                let descText = descElement.textContent;
+                
+                terms.forEach(term => {
+                    const regex = new RegExp(`(${term})`, 'gi');
+                    nameText = nameText.replace(regex, '<span class="highlight">$1</span>');
+                    descText = descText.replace(regex, '<span class="highlight">$1</span>');
+                });
+                
+                nameElement.innerHTML = nameText;
+                descElement.innerHTML = descText;
+            });
+        }
+
+        // Track channel clicks
+        function trackChannelClick(channelId) {
+            const channelIndex = channelsData.findIndex(channel => channel.id === channelId);
+            
+            if (channelIndex !== -1) {
+                channelsData[channelIndex].clicks++;
+                
+                // Update the report if we're viewing clicks report
+                if (currentReportType === 'clicks') {
+                    generateClicksReport();
+                }
+                
+                // Update the channel card stats
+                updateChannelStats(channelId);
+            }
+        }
+
+        // Update channel stats on the card
+        function updateChannelStats(channelId) {
+            const channel = channelsData.find(c => c.id === channelId);
+            if (!channel) return;
+            
+            const channelCard = document.querySelector(`.channel-link[data-channel-id="${channelId}"]`).closest('.channel-card');
+            const statsElement = channelCard.querySelector('.channel-stats');
+            
+            statsElement.innerHTML = `
+                <div><i class="fas fa-eye"></i> ${channel.visits} زيارة</div>
+                <div><i class="fas fa-mouse-pointer"></i> ${channel.clicks} نقرة</div>
+            `;
+        }
+
+        // Generate visitors report
+        function generateVisitorsReport() {
+            currentReportType = 'visitors';
+            
+            // Update active button
+            visitorsReportBtn.classList.remove('secondary');
+            clicksReportBtn.classList.add('secondary');
+            
+            // Update table header
+            reportHeader.textContent = 'عدد الزيارات';
+            
+            // Sort channels by visits
+            const sortedChannels = [...channelsData].sort((a, b) => b.visits - a.visits);
+            
+            // Generate table rows
+            reportBody.innerHTML = '';
+            
+            sortedChannels.forEach(channel => {
+                const percentage = ((channel.visits / totalVisits) * 100).toFixed(1);
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${channel.name}</td>
+                    <td>${channel.visits}</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="flex: 1; height: 10px; background-color: #e0e0e0; border-radius: 5px;">
+                                <div style="width: ${percentage}%; height: 100%; background-color: var(--primary-color); border-radius: 5px;"></div>
+                            </div>
+                            <div style="min-width: 40px;">${percentage}%</div>
+                        </div>
+                    </td>
+                `;
+                
+                reportBody.appendChild(row);
+            });
+        }
+
+        // Generate clicks report
+        function generateClicksReport() {
+            currentReportType = 'clicks';
+            
+            // Update active button
+            clicksReportBtn.classList.remove('secondary');
+            visitorsReportBtn.classList.add('secondary');
+            
+            // Update table header
+            reportHeader.textContent = 'عدد النقرات';
+            
+            // Sort channels by clicks
+            const sortedChannels = [...channelsData].sort((a, b) => b.clicks - a.clicks);
+            
+            // Calculate total clicks
+            const totalClicks = sortedChannels.reduce((sum, channel) => sum + channel.clicks, 0);
+            
+            // Generate table rows
+            reportBody.innerHTML = '';
+            
+            sortedChannels.forEach(channel => {
+                const percentage = totalClicks > 0 ? ((channel.clicks / totalClicks) * 100).toFixed(1) : 0;
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${channel.name}</td>
+                    <td>${channel.clicks}</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="flex: 1; height: 10px; background-color: #e0e0e0; border-radius: 5px;">
+                                <div style="width: ${percentage}%; height: 100%; background-color: var(--secondary-color); border-radius: 5px;"></div>
+                            </div>
+                            <div style="min-width: 40px;">${percentage}%</div>
+                        </div>
+                    </td>
+                `;
+                
+                reportBody.appendChild(row);
+            });
+        }
+
+        // Simulate visitor growth
+        function simulateVisitorGrowth() {
+            setInterval(() => {
+                // Randomly select a channel to add a visit
+                const randomChannelIndex = Math.floor(Math.random() * channelsData.length);
+                channelsData[randomChannelIndex].visits++;
+                
+                // Update total visits
+                totalVisits++;
+                totalVisitorsElement.textContent = totalVisits.toLocaleString();
+                
+                // Update the report if we're viewing visitors report
+                if (currentReportType === 'visitors') {
+                    generateVisitorsReport();
+                }
+                
+                // Update the channel card stats
+                updateChannelStats(channelsData[randomChannelIndex].id);
+                
+            }, 10000); // Every 10 seconds
+        }
+
+        // Print report
+        function printReport() {
+            const printWindow = window.open('', '_blank');
+            const reportType = currentReportType === 'visitors' ? 'تقرير الزوار' : 'تقرير النقرات';
+            
+            printWindow.document.write(`
+                <html dir="rtl">
+                <head>
+                    <title>${reportType} - موقع قنوات التليجرام التعليمية</title>
+                    <style>
+                        body { font-family: 'Cairo', sans-serif; padding: 20px; }
+                        h1 { color: #1a5fb4; text-align: center; }
+                        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                        th, td { padding: 10px; text-align: right; border-bottom: 1px solid #ddd; }
+                        th { background-color: #f5f5f5; }
+                        @media print {
+                            body { font-size: 12pt; }
+                            button { display: none; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>${reportType}</h1>
+                    <p>تاريخ التقرير: ${new Date().toLocaleDateString('ar-EG')}</p>
+                    ${document.getElementById('reportTable').outerHTML}
+                    <br>
+                    <button onclick="window.print()">طباعة التقرير</button>
+                    <button onclick="window.close()">إغلاق</button>
+                </body>
+                </html>
+            `);
+            
+            printWindow.document.close();
+        }
+
+        // Export report data
+        function exportReportData() {
+            const reportType = currentReportType === 'visitors' ? 'الزوار' : 'النقرات';
+            let csvContent = "data:text/csv;charset=utf-8,\uFEFF";
+            
+            // Add headers
+            csvContent += `القناة,عدد ${reportType},النسبة\n`;
+            
+            // Add data rows
+            const rows = document.querySelectorAll('#reportBody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const channelName = cells[0].textContent;
+                const count = cells[1].textContent;
+                const percentage = cells[2].textContent.trim().split('%')[0];
+                
+                csvContent += `"${channelName}",${count},${percentage}%\n`;
+            });
+            
+            // Create download link
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `تقرير_${reportType}_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link);
+            
+            // Trigger download
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Setup all event listeners
+        function setupEventListeners() {
+            // Search functionality
+            searchButton.addEventListener('click', () => searchChannels(searchInput.value));
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    searchChannels(searchInput.value);
+                }
+            });
+            
+            // Report buttons
+            visitorsReportBtn.addEventListener('click', generateVisitorsReport);
+            clicksReportBtn.addEventListener('click', generateClicksReport);
+            
+            // Print and export buttons
+            printReportBtn.addEventListener('click', printReport);
+            exportReportBtn.addEventListener('click', exportReportData);
+            
+            // Navigation smooth scrolling
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active link
+                    document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Scroll to section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
